@@ -73,7 +73,7 @@ Tip: See [material design offline states](https://material.io/guidelines/pattern
 
 ```js
 module.exports = {
-  // a directory should be the same as "reactSnap.destination",
+  // a directory should be the same as "seoFriendly.destination",
   // which default value is `build`
   staticFileGlobs: [
     "build/static/css/*.css",
@@ -83,7 +83,7 @@ module.exports = {
   ],
   stripPrefix: "build",
   publicPath: ".",
-  // there is "reactSnap.include": ["/shell.html"] in package.json
+  // there is "seoFriendly.include": ["/shell.html"] in package.json
   navigateFallback: "/shell.html",
   // Ignores URLs starting from /__ (useful for Firebase):
   // https://github.com/facebookincubator/create-react-app/issues/2237#issuecomment-302693219
@@ -100,7 +100,7 @@ module.exports = {
       handler: "fastest"
     }
   ]
-};
+}
 ```
 
 You can use `200.html` instead of `shell.html` if you use `react-snap` and do not have separate `shell.html`. This is important because `react-snap` will prerender `index.html` and when user will be offline their will see a flash of `index.html` on navigation.
@@ -142,9 +142,9 @@ glob(staticFileGlobs).then(files => {
   // strip out prefix
   files = files.map(file => file.replace(stripPrefix, ''))
 
-  const index = files.indexOf(navigateFallback);
+  const index = files.indexOf(navigateFallback)
   if (index > -1) {
-    files.splice(index, 1);
+    files.splice(index, 1)
   }
 
   const out = [
@@ -171,18 +171,18 @@ glob(staticFileGlobs).then(files => {
 `registerServiceWorker.js`:
 
 ```js
-import appCacheNanny from "appcache-nanny";
+import appCacheNanny from "appcache-nanny"
 
 export default function register() {
-  if (process.env.NODE_ENV !== 'production') return false;
+  if (process.env.NODE_ENV !== 'production') return false
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`
       navigator.serviceWorker
         .register(swUrl)
         .then(registration => {
           registration.onupdatefound = () => {
-            const installingWorker = registration.installing;
+            const installingWorker = registration.installing
             installingWorker.onstatechange = () => {
               if (installingWorker.state === 'installed') {
                 if (navigator.serviceWorker.controller) {
@@ -190,40 +190,40 @@ export default function register() {
                   // the fresh content will have been added to the cache.
                   // It's the perfect time to display a "New content is
                   // available; please refresh." message in your web app.
-                  console.log('New content is available; please refresh.');
+                  console.log('New content is available; please refresh.')
                 } else {
                   // At this point, everything has been precached.
                   // It's the perfect time to display a
                   // "Content is cached for offline use." message.
-                  console.log('Content is cached for offline use.');
+                  console.log('Content is cached for offline use.')
                 }
               }
-            };
-          };
+            }
+          }
         })
         .catch(error => {
-          console.error('Error during service worker registration:', error);
-        });
-    });
+          console.error('Error during service worker registration:', error)
+        })
+    })
   } else if (window.applicationCache) {
-    appCacheNanny.start();
+    appCacheNanny.start()
     appCacheNanny.on('updateready', () => {
-      console.log('New content is available; please refresh.');
-    });
+      console.log('New content is available; please refresh.')
+    })
     appCacheNanny.on('cached', () => {
-       console.log('Content is cached for offline use.');
-    });
+       console.log('Content is cached for offline use.')
+    })
   }
-  return true;
+  return true
 }
 
 export function unregister() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready.then(registration => {
-      registration.unregister();
-    });
+      registration.unregister()
+    })
   } else if (window.applicationCache) {
-    appCacheNanny.stop();
+    appCacheNanny.stop()
   }
 }
 ```
@@ -238,10 +238,10 @@ Tip: If you do not have images for social media, you can use screenshots of your
 yarn add react-helmet
 ```
 
-```js
+```jsx
 import React from 'react'
 import Helmet from 'react-helmet'
-import { basePath } from './Config.js';
+import { basePath } from './Config.js'
 
 const locales = {
   "en": "en_US"
@@ -377,8 +377,8 @@ First way:
 
 ```js
 import ReactGA from 'react-ga'
-const snap = navigator.userAgent !== 'ReactSnap';
-const production = process.env.NODE_ENV === 'production';
+const snap = navigator.userAgent !== 'SeoFriendly'
+const production = process.env.NODE_ENV === 'production'
 if (production && snap) { ReactGA.initialize('XX-XXXXXXXX-X') }
 ```
 
@@ -395,10 +395,10 @@ Tip: see [The Google Analytics Setup I Use on Every Site I Build](https://philip
 `scripts/screenshots.js`:
 
 ```js
-const { run } = require("react-snap");
+const { run } = require("react-snap")
 
 run({
   destination: "build/screenshots",
   saveAs: "png"
-});
+})
 ```

@@ -3,7 +3,7 @@
 const url = require("url");
 const { run } = require("./index.js");
 const {
-  reactSnap,
+  seoFriendly,
   homepage,
   devDependencies,
   dependencies
@@ -42,7 +42,7 @@ run({
   publicPath: publicUrl ? url.parse(publicUrl).pathname : "/",
   homepage,
   fixWebpackChunksIssue,
-  ...reactSnap
+  ...seoFriendly
 }).catch(error => {
   console.error(error);
   process.exit(1);

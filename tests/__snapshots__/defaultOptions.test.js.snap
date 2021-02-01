@@ -45,7 +45,7 @@ Object {
   "skipThirdPartyRequests": false,
   "source": "build",
   "sourceMaps": true,
-  "userAgent": "ReactSnap",
+  "userAgent": "SeoFriendly",
   "viewport": Object {
     "height": 850,
     "width": 480,

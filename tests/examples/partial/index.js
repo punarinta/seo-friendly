@@ -1,11 +1,12 @@
-if (navigator.userAgent === "ReactSnap") {
+if (navigator.userAgent === 'SeoFriendly') {
     // Strip out all content except the root
-    while (document.firstChild)
-        document.removeChild(document.firstChild);
+    while (document.firstChild) {
+        document.removeChild(document.firstChild)
+    }
 
-    let div = document.createElement("div");
-    div.className = `root`;
-    div.innerHTML = `This is my content`;
+    const div = document.createElement('div')
 
-    document.appendChild(div);
+    div.className = 'root'
+    div.innerHTML = 'This is my content'
+    document.appendChild(div)
 }
