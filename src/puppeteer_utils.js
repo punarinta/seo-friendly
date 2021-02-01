@@ -37,17 +37,20 @@ const skipThirdPartyRequests = async opt => {
 const enableLogging = opt => {
   const { page, options, route, onError, sourcemapStore } = opt
   page.on("console", msg => {
-    const text = msg.text()
-    if (text === "JSHandle@object") {
-      Promise.all(msg.args().map(objectToJson)).then(args =>
-        console.log(`💬  console.log at ${route}:`, ...args)
-      )
-    } else if (text === "JSHandle@error") {
-      Promise.all(msg.args().map(errorToString)).then(args =>
-        console.log(`💬  console.log at ${route}:`, ...args)
-      )
-    } else {
-      console.log(`️️️💬  console.log at ${route}:`, text)
+    if (options.verbosity.info) {
+      const text = msg.text()
+
+      if (text === "JSHandle@object") {
+        Promise.all(msg.args().map(objectToJson)).then(args =>
+          console.log(`💬  console.log at ${route}:`, ...args)
+        )
+      } else if (text === "JSHandle@error") {
+        Promise.all(msg.args().map(errorToString)).then(args =>
+          console.log(`💬  console.log at ${route}:`, ...args)
+        )
+      } else {
+        console.log(`️️️💬  console.log at ${route}:`, text)
+      }
     }
   })
   page.on("error", msg => {

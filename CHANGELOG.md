@@ -1,9 +1,10 @@
 # 2.0.0
 - Hard forked to continue maintenance for personal usage
+- Update all outdated packages
 - Added an "exclude" option
 - Add an option to generate sitemaps
 - "fastFail" option added: set false to continue on crawl error
-- Update all outdated packages
+- "verbosity" option to control verbosity (now only info-level)
 
 # 1.23.0
 
