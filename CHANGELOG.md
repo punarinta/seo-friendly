@@ -1,3 +1,7 @@
+# 2.0.0
+- Hard forked to continue maintenance for personal usage
+- Added an "exclude" option
+
 # 1.23.0
 
 - Potential fix for #301 illegal operation on a directory (#317)
