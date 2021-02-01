@@ -1,6 +1,7 @@
 # 2.0.0
 - Hard forked to continue maintenance for personal usage
 - Added an "exclude" option
+- Update all outdated packages
 
 # 1.23.0
 
