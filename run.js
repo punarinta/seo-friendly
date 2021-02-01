@@ -40,6 +40,7 @@ if (parcel) {
 
 run({
   publicPath: publicUrl ? url.parse(publicUrl).pathname : "/",
+  homepage,
   fixWebpackChunksIssue,
   ...reactSnap
 }).catch(error => {

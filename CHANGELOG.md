@@ -1,6 +1,7 @@
 # 2.0.0
 - Hard forked to continue maintenance for personal usage
 - Added an "exclude" option
+- Add an option to generate sitemaps
 - Update all outdated packages
 
 # 1.23.0
