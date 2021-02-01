@@ -2,6 +2,7 @@
 - Hard forked to continue maintenance for personal usage
 - Added an "exclude" option
 - Add an option to generate sitemaps
+- "fastFail" option added: set false to continue on crawl error
 - Update all outdated packages
 
 # 1.23.0

@@ -21,7 +21,8 @@ const defaultOptions = {
   include: ["/"],
   exclude: [],
   sitemap: false,
-  userAgent: "ReactSnap",
+  fastFail: true,
+  userAgent: "SeoFriendly",
   // 4 params below will be refactored to one: `puppeteer: {}`
   // https://github.com/stereobooster/react-snap/issues/120
   headless: true,

@@ -160,7 +160,9 @@ const crawl = async opt => {
 
   const onUnhandledRejection = error => {
     console.log("🔥  UnhandledPromiseRejectionWarning", error);
-    shuttingDown = true;
+    if (options.fastFail) {
+      shuttingDown = true;
+    }
   };
   process.on("unhandledRejection", onUnhandledRejection);
 
@@ -245,7 +247,11 @@ const crawl = async opt => {
           await page.goto(pageUrl, { waitUntil: "networkidle0" });
         } catch (e) {
           e.message = augmentTimeoutError(e.message, tracker);
-          throw e;
+          if (opt.fastFail) {
+            throw e;
+          } else {
+            console.log(`🔥  failed to crawl page: ${pageUrl}`, e);
+          }
         } finally {
           tracker.dispose();
         }
