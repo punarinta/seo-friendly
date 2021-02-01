@@ -38,7 +38,7 @@ To prerender JavaScript a application we need either a virtual DOM like in React
 
 **Examples**:
 
-- `react-snap` uses `puppeteer`
+- `seo-friendly` uses `puppeteer`
 
 **Cons**:
 
@@ -66,7 +66,7 @@ Because we have a client-side application, most likely we deal with client-side 
 
 - `gatsby` (`createPages` in `gatsby-node.js`)
 - `react-static` (`getRoutes` in `static.config.js`)
-- `react-snap` - we can require it as lib and pass array of pages to the generator function
+- `seo-friendly` - we can require it as lib and pass array of pages to the generator function
 
 **Cons**:
 
@@ -76,7 +76,7 @@ Because we have a client-side application, most likely we deal with client-side 
 
 **Examples**:
 
-- `react-snap`
+- `seo-friendly`
 - `react-snapshot`
 
 **Cons**:
@@ -92,7 +92,7 @@ If prerenderer is data layer agnostic or not?
 
 **Examples**:
 
-- `react-snap`
+- `seo-friendly`
 - `react-static`
 
 **Pros**:
@@ -115,7 +115,7 @@ If prerenderer is data layer agnostic or not?
 
 **Examples**:
 
-- `react-snap`
+- `seo-friendly`
 
 ### With data generator
 
@@ -132,7 +132,7 @@ Now, once we have our application prerendered, the next question is how to prope
 
 **Examples**:
 
-- `react-snap` ([Redux example](https://github.com/stereobooster/react-snap#redux))
+- `seo-friendly` ([Redux example](https://github.com/stereobooster/react-snap#redux))
 
 ### Special data acсessor
 
@@ -145,7 +145,7 @@ Now, once we have our application prerendered, the next question is how to prope
 
 **Examples**:
 
-- `react-snap` ([Cache AJAX requests example](https://github.com/stereobooster/react-snap#ajax))
+- `seo-friendly` ([Cache AJAX requests example](https://github.com/stereobooster/react-snap#ajax))
 
 ## Webpack
 
@@ -155,7 +155,7 @@ Some of prerenderers are Webpack agnostic, some are implemented as Webpack plugi
 
 **Examples**:
 
-- `react-snap`
+- `seo-friendly`
 
 **Pros**:
 - can be used with other bundlers, for example Parcel

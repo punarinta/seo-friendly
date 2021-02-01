@@ -17,4 +17,4 @@
 
 ## Other features
 
-- `react-snap` works concurrently, by default it uses 4 tabs in the browser. Can be configured with `concurrency` option.
+- `seo-friendly` works concurrently, by default it uses 4 tabs in the browser. Can be configured with `concurrency` option.

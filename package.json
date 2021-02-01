@@ -34,7 +34,7 @@
     "precommit": "prettier --write {*,src/*}.{js,json,css}"
   },
   "bin": {
-    "react-snap": "./run.js"
+    "seo-friendly": "./run.js"
   },
   "files": [
     "index.js",

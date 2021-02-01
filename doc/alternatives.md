@@ -2,7 +2,7 @@
 
 ## Prerendering, snapshotting
 
-|                               | react-snap | [prerender-spa-plugin][prerender-spa-plugin] | [react-snapshot][react-snapshot] | [prep][prep] | [snapshotify][snapshotify] |
+|                               | seo-friendly | [prerender-spa-plugin][prerender-spa-plugin] | [react-snapshot][react-snapshot] | [prep][prep] | [snapshotify][snapshotify] |
 |-------------------------------|------------|----------------------------------------------|----------------------------------|--------------|----------------------------|
 | State                         | supported  | supported                                    | unsupported                      | unsupported  | experimental               |
 | DOM implementation            | puppeteer  | phantomjs-prebuilt                           | jsdom                            | nightmare    | puppeteer                  |

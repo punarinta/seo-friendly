@@ -98,7 +98,7 @@ Next problem: Lighthouse complains about render-blocking stylesheets.
 |-----------|------------|--------------|-------------|--------------------------|--------|----------|----------|--------|----------|----------|-------|
 | 3.566s    | 1.731s     | 2.558s       | 2558        | 3.814s                   | 3.566s | 3        | 90 KB    | 5.593s | 10       | 211 KB   | $---- |
 
-**Solution**: switch from `react-snapshot` to `react-snap` and use `inlineCss` feature.
+**Solution**: switch from `react-snapshot` to `seo-friendly` and use `inlineCss` feature.
 
 `inlineCss` - will either inline critical CSS and load all the rest in a non-blocking manner or will inline all CSS directly in HTML.
 
@@ -118,7 +118,7 @@ Next problem: Lighthouse complains about render-blocking stylesheets.
 
 Next optimization is pretty trivial and does not require code modification, but it requires the support of custom headers from your hosting. You will need to be able to set `Link` header.
 
-`react-snap` can generate Link headers in [superstatic](https://github.com/firebase/superstatic) format, like this:
+`seo-friendly` can generate Link headers in [superstatic](https://github.com/firebase/superstatic) format, like this:
 
 ```json
 {
@@ -210,7 +210,7 @@ File sizes after gzip:
 
 ## Round 7: load JS in a non-blocking manner
 
-**Solution**: use `asyncScriptTags` feature of `react-snap`
+**Solution**: use `asyncScriptTags` feature of `seo-friendly`
 
 🔖 [round-7](https://github.com/stereobooster/an-almost-static-stack/compare/round-6...stereobooster:round-7?expand=1)
 
@@ -228,7 +228,7 @@ File sizes after gzip:
 
 [Inspired by Netflix](https://twitter.com/NetflixUIE/status/923374215041912833).
 
-**Solution**: use `removeScriptTags` feature of `react-snap`
+**Solution**: use `removeScriptTags` feature of `seo-friendly`
 
 🔖 [round-8](https://github.com/stereobooster/an-almost-static-stack/compare/round-7...stereobooster:round-8?expand=1)
 

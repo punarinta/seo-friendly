@@ -38,7 +38,7 @@ git checkout round-0
 git checkout round-1
 ```
 
-Add `react-snap`. No configurations!
+Add `seo-friendly`. No configurations!
 
 ![emotion-1-filmstrip.png](images/emotion-1-filmstrip.png)
 

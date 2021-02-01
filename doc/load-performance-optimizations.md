@@ -4,19 +4,19 @@
 
 ### Prerendered HTML
 
-`react-snap` prerenders HTML, so the browser can start to render content or download required resources ASAP.
+`seo-friendly` prerenders HTML, so the browser can start to render content or download required resources ASAP.
 
 ### preconnect for third-party resources
 
-`react-snap` tracks all third-party connections during rendering and will place appropriate preconnect links in the `header`.
+`seo-friendly` tracks all third-party connections during rendering and will place appropriate preconnect links in the `header`.
 
 ### If you are using code splitting feature of Webpack
 
-`react-snap` will remove chunk scripts from the HTML and instead will place preload links in the `header`.
+`seo-friendly` will remove chunk scripts from the HTML and instead will place preload links in the `header`.
 
 ### If you are using CSS-in-JS solution
 
-`react-snap` will prerender all styles and save in the HTML.
+`seo-friendly` will prerender all styles and save in the HTML.
 
 ## Requires configuration
 
@@ -24,15 +24,15 @@ This is a brief overview of what described in Readme and [recipes](recipes.md).
 
 ### inlineCss
 
-With this configuration enabled `react-snap` will inline critical CSS and stylesheet links will be loaded in a nonblocking manner with the help of [loadCss](https://www.npmjs.com/package/fg-loadcss).
+With this configuration enabled `seo-friendly` will inline critical CSS and stylesheet links will be loaded in a nonblocking manner with the help of [loadCss](https://www.npmjs.com/package/fg-loadcss).
 
 ### cacheAjaxRequests
 
-If you are doing AJAX requests (to the same domain), `react-snap` can cache this data in the window. Think of it as a poor man's Redux rehydration.
+If you are doing AJAX requests (to the same domain), `seo-friendly` can cache this data in the window. Think of it as a poor man's Redux rehydration.
 
 ### http2PushManifest
 
-`react-snap` can record all resources (scripts, styles, images) required for the page and write down this data to the JSON file. You can use this JSON file to generate HTTP2 server pushes or Link headers.
+`seo-friendly` can record all resources (scripts, styles, images) required for the page and write down this data to the JSON file. You can use this JSON file to generate HTTP2 server pushes or Link headers.
 
 ### If you are using Redux
 

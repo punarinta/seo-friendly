@@ -15,7 +15,7 @@
   * [Setup Cloudflare](#setup-cloudflare)
   * [Deployment](#deployment)
   * [Caveats](#caveats)
-- [react-snap specific](#react-snap-specific)
+- [seo-friendly specific](#seo-friendly-specific)
   * [Usage with Google Analytics](#usage-with-google-analytics)
   * [Use to render screenshots](#use-to-render-screenshots)
 
@@ -65,7 +65,7 @@ Tip: See [material design offline states](https://material.io/guidelines/pattern
 ```json
 "scripts": {
     "generate-sw": "sw-precache --root=build --config scripts/sw-precache-config.js && uglifyjs build/service-worker.js -o build/service-worker.js",
-    "build-snap": "react-scripts build && react-snap && yarn run generate-sw"
+    "build-snap": "react-scripts build && seo-friendly && yarn run generate-sw"
 }
 ```
 
@@ -103,7 +103,7 @@ module.exports = {
 }
 ```
 
-You can use `200.html` instead of `shell.html` if you use `react-snap` and do not have separate `shell.html`. This is important because `react-snap` will prerender `index.html` and when user will be offline their will see a flash of `index.html` on navigation.
+You can use `200.html` instead of `shell.html` if you use `seo-friendly` and do not have separate `shell.html`. This is important because `seo-friendly` will prerender `index.html` and when user will be offline their will see a flash of `index.html` on navigation.
 
 ### Use sw-precache with Google Analytics
 
@@ -369,7 +369,7 @@ _(files)
 - AWS S3 does not support custom HTTP headers, that is why you will not be able to use [HTTP2 push with Cloudflare](https://blog.cloudflare.com/announcing-support-for-http-2-server-push-2/).
 - [s3-sync-aws does not remove old files](https://github.com/andreialecu/s3-sync-aws/issues/3).
 
-## react-snap specific
+## seo-friendly specific
 
 ### Usage with Google Analytics
 
@@ -395,7 +395,7 @@ Tip: see [The Google Analytics Setup I Use on Every Site I Build](https://philip
 `scripts/screenshots.js`:
 
 ```js
-const { run } = require("react-snap")
+const { run } = require("seo-friendly")
 
 run({
   destination: "build/screenshots",

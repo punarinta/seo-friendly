@@ -20,14 +20,14 @@ Pre-renders a web app into static HTML. Uses [Headless Chrome](https://github.co
 Install:
 
 ```sh
-yarn add --dev react-snap
+yarn add --dev seo-friendly
 ```
 
 Change `package.json`:
 
 ```json
 "scripts": {
-  "postbuild": "react-snap"
+  "postbuild": "seo-friendly"
 }
 ```
 
@@ -104,7 +104,7 @@ window.snapSaveState = () => {
 }
 ```
 
-`window.snapSaveState` is a callback to save the state of the application at the end of rendering. It can be used for Redux or async components. In this example, it is repurposed to alter the DOM, this is why I call it a "hack." Maybe in future versions of `react-snap`, I will come up with better abstractions or automate this process.
+`window.snapSaveState` is a callback to save the state of the application at the end of rendering. It can be used for Redux or async components. In this example, it is repurposed to alter the DOM, this is why I call it a "hack." Maybe in future versions of `seo-friendly`, I will come up with better abstractions or automate this process.
 
 ### Vue 1.x
 
@@ -119,7 +119,7 @@ Make sure to use [`replace: false`](https://v1.vuejs.org/api/#replace) for root 
 
 ## ⚙️ Customization
 
-If you need to pass some options for `react-snap`, you can do this in your `package.json` like this:
+If you need to pass some options for `seo-friendly`, you can do this in your `package.json` like this:
 
 ```json
 "seoFriendly": {
@@ -146,7 +146,7 @@ Without the `homepage` a sitemap can't be generated.
 
 Experimental feature - requires improvements.
 
-`react-snap` can inline critical CSS with the help of [minimalcss](https://github.com/peterbe/minimalcss) and full CSS will be loaded in a non-blocking manner with the help of [loadCss](https://www.npmjs.com/package/fg-loadcss).
+`seo-friendly` can inline critical CSS with the help of [minimalcss](https://github.com/peterbe/minimalcss) and full CSS will be loaded in a non-blocking manner with the help of [loadCss](https://www.npmjs.com/package/fg-loadcss).
 
 Use `inlineCss: true` to enable this feature.
 
@@ -165,7 +165,7 @@ An async component (in React) is a technique (typically implemented as a higher-
 - [`react-loadable`](https://github.com/thejameskyle/react-loadable)
 - [`react-async-component`](https://github.com/ctrlplusb/react-async-component)
 
-It is not a problem to render async components with `react-snap`, the tricky part happens when a prerendered React application boots and async components are not loaded yet, so React draws the "loading" state of a component, and later when the component is loaded, React draws the actual component. As a result, the user sees a flash:
+It is not a problem to render async components with `seo-friendly`, the tricky part happens when a prerendered React application boots and async components are not loaded yet, so React draws the "loading" state of a component, and later when the component is loaded, React draws the actual component. As a result, the user sees a flash:
 
 ```
 100%                    /----|    |----
@@ -178,7 +178,7 @@ It is not a problem to render async components with `react-snap`, the tricky par
 0%  -------------/
 ```
 
-Usually a _code splitting_ library provides an API to handle it during SSR, but as long as "real" SSR is not used in react-snap - the issue surfaces, and there is no simple way to fix it.
+Usually a _code splitting_ library provides an API to handle it during SSR, but as long as "real" SSR is not used in seo-friendly - the issue surfaces, and there is no simple way to fix it.
 
 1. Use [react-prerendered-component](https://github.com/theKashey/react-prerendered-component). This library holds onto the prerendered HTML until the dynamically imported code is ready.
 
@@ -259,7 +259,7 @@ delete window.__PRELOADED_STATE__
 // Create Redux store with initial state
 const store = createStore(counterApp, preloadedState || initialState)
 
-// Tell react-snap how to save Redux state
+// Tell seo-friendly how to save Redux state
 window.snapSaveState = () => ({
   __PRELOADED_STATE__: store.getState()
 })
@@ -277,7 +277,7 @@ You can block all third-party requests with the following config:
 
 ### AJAX
 
-`react-snap` can capture all AJAX requests. It will store `json` requests in the domain in `window.snapStore[<path>]`, where `<path>` is the path of the request.
+`seo-friendly` can capture all AJAX requests. It will store `json` requests in the domain in `window.snapStore[<path>]`, where `<path>` is the path of the request.
 
 Use `"cacheAjaxRequests": true` to enable this feature.
 
@@ -308,7 +308,7 @@ Read more about [puppeteer troubleshooting](https://github.com/GoogleChrome/pupp
 
 #### Docker + Alpine
 
-To run `react-snap` inside `docker` with Alpine, you might want to use a custom Chromium executable. See [#93](https://github.com/stereobooster/react-snap/issues/93#issuecomment-354994505) and [#132](https://github.com/stereobooster/react-snap/issues/132#issuecomment-362333702).
+To run `seo-friendly` inside `docker` with Alpine, you might want to use a custom Chromium executable. See [#93](https://github.com/stereobooster/react-snap/issues/93#issuecomment-354994505) and [#132](https://github.com/stereobooster/react-snap/issues/132#issuecomment-362333702).
 
 #### Heroku
 
