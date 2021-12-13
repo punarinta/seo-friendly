@@ -1,3 +1,7 @@
+# 2.0.1
+- packages updated
+- make sure there are no failing tests
+
 # 2.0.0
 - Hard forked to continue maintenance for personal usage
 - Update all outdated packages
