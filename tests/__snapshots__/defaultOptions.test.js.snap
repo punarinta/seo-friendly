@@ -1,26 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`defaultOptions 1`] = `
-Object {
+{
   "asyncScriptTags": false,
   "cacheAjaxRequests": false,
   "concurrency": 4,
   "crawl": true,
   "destination": null,
+  "exclude": [],
   "externalServer": false,
+  "fastFail": true,
   "fixInsertRule": true,
   "fixWebpackChunksIssue": "CRA1",
   "headless": true,
   "http2PushManifest": false,
-  "ignoreForPreload": Array [
+  "ignoreForPreload": [
     "service-worker.js",
   ],
-  "include": Array [
+  "include": [
     "/",
   ],
   "inlineCss": false,
-  "minifyCss": Object {},
-  "minifyHtml": Object {
+  "minifyCss": {},
+  "minifyHtml": {
     "collapseBooleanAttributes": true,
     "collapseWhitespace": true,
     "decodeEntities": true,
@@ -32,21 +34,25 @@ Object {
   "preconnectThirdParty": true,
   "preloadImages": false,
   "publicPath": "/",
-  "puppeteer": Object {
+  "puppeteer": {
     "cache": true,
   },
-  "puppeteerArgs": Array [],
+  "puppeteerArgs": [],
   "puppeteerExecutablePath": undefined,
   "puppeteerIgnoreHTTPSErrors": false,
   "removeBlobs": true,
   "removeScriptTags": false,
   "removeStyleTags": false,
   "saveAs": "html",
+  "sitemap": false,
   "skipThirdPartyRequests": false,
   "source": "build",
   "sourceMaps": true,
   "userAgent": "SeoFriendly",
-  "viewport": Object {
+  "verbosity": {
+    "info": true,
+  },
+  "viewport": {
     "height": 850,
     "width": 480,
   },
