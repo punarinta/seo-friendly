@@ -371,3 +371,12 @@ Please provide a reproducible demo of a bug and steps to reproduce it. Thanks!
 ### Share on the web
 
 Tweet it, like it, share it, star it. Thank you.
+
+### Known bugs
+NPM 8.19.2 CLI bugs
+
+1. In file ~/.nvm/versions/node/v18.12.1/lib/node_modules/npm/node_modules/@npmcli/metavuln-calculator/lib/advisory.js, on line 109 replace
+   `const pakuVersions = Object.keys(packument.versions)` => `const pakuVersions = Object.keys(packument && packument.versions ? packument.versions : [])`
+
+2. In file ~/.nvm/versions/node/v18.12.1/lib/node_modules/npm/node_modules/@npmcli/metavuln-calculator/lib/advisory.js, before line 245 add
+   `if (!this[_packument].versions) this[_packument].versions = []`
